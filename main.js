@@ -15,6 +15,20 @@
 // sessionStorage.removeItem('email');
 
 //COOKIES
-document.cookie = "username=John Doe";
-document.cookie = 'name=rana; expires=' + new Date(2023,0,04).toUTCString();
-document.cookie = 'lstname=singh';
+// document.cookie = "username=John Doe";
+// document.cookie = 'name=rana; expires=' + new Date(2023,0,04).toUTCString();
+// document.cookie = 'lstname=singh';
+
+//ASSIGNMENT
+
+function saveToLocalStorage(event){
+    event.preventDefault();
+    const name = event.target.username.value;
+    const emailId = event.target.email.value;
+    const phonenumber = event.target.usercontact.value;
+    const timeOfCall = event.target.datetime.value;
+    localStorage.setItem('name',name);
+    localStorage.setItem('email',emailId);
+    localStorage.setItem('contact',phonenumber);
+    localStorage.setItem('callhrs',timeOfCall);
+}
