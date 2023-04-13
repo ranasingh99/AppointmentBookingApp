@@ -23,6 +23,7 @@
 
 function saveToLocalStorage(event){
     event.preventDefault();
+    
     const name = event.target.username.value;
     const emailId = event.target.email.value;
     const phonenumber = event.target.usercontact.value;
@@ -31,4 +32,11 @@ function saveToLocalStorage(event){
     localStorage.setItem('email',emailId);
     localStorage.setItem('contact',phonenumber);
     localStorage.setItem('callhrs',timeOfCall);
+    const obj = {
+        name:name,
+        email:emailId,
+        contact:phonenumber,
+        callhrs:timeOfCall
+    }
+    localStorage.setItem('userDetails',JSON.stringify(obj));
 }
