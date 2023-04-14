@@ -46,6 +46,18 @@ function showUsersOnScreen(obj){
     const parentElement = document.getElementById('listOfItems');
     const childElement = document.createElement('li');
     childElement.textContent = obj.name+" "+obj.email;
+    const deleteButton = document.createElement('input');
+     deleteButton.type = 'button';
+     deleteButton.value ='Delete';
+     deleteButton.id = 'btn-1';
+     deleteButton.onclick = ()=>{
+        localStorage.removeItem(obj.email);
+       parentElement.removeChild(childElement);
+    }
+
+    childElement.appendChild(deleteButton);
     parentElement.appendChild(childElement);
+    let button1 = document.getElementById('btn-1');
+    button1.style.width = '50px';
 }
 ;
