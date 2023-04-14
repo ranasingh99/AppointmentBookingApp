@@ -40,10 +40,12 @@ function saveToLocalStorage(event){
     }
     localStorage.setItem(obj.email,JSON.stringify(obj));
     showUsersOnScreen(obj);
+}
 
 function showUsersOnScreen(obj){
     const parentElement = document.getElementById('listOfItems');
     const childElement = document.createElement('li');
     childElement.textContent = obj.name+" "+obj.email;
+    parentElement.appendChild(childElement);
 }
-};
+;
