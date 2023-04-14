@@ -28,15 +28,22 @@ function saveToLocalStorage(event){
     const emailId = event.target.email.value;
     const phonenumber = event.target.usercontact.value;
     const timeOfCall = event.target.datetime.value;
-    localStorage.setItem('name',name);
-    localStorage.setItem('email',emailId);
-    localStorage.setItem('contact',phonenumber);
-    localStorage.setItem('callhrs',timeOfCall);
+    // localStorage.setItem('name',name);
+    // localStorage.setItem('email',emailId);
+    // localStorage.setItem('contact',phonenumber);
+    // localStorage.setItem('callhrs',timeOfCall);
     const obj = {
         name:name,
         email:emailId,
         contact:phonenumber,
         callhrs:timeOfCall
     }
-    localStorage.setItem('userDetails',JSON.stringify(obj));
+    localStorage.setItem(obj.email,JSON.stringify(obj));
+    showUsersOnScreen(obj);
+
+function showUsersOnScreen(obj){
+    const parentElement = document.getElementById('listOfItems');
+    const childElement = document.createElement('li');
+    childElement.textContent = obj.name+" "+obj.email;
 }
+};
