@@ -55,9 +55,30 @@ function showUsersOnScreen(obj){
        parentElement.removeChild(childElement);
     }
 
+  
+
+    //edit button 
+    const editButton = document.createElement('input');
+    editButton.type = 'button';
+    editButton.value = 'Edit';
+    editButton.id = 'btn-2';
+    editButton.onclick = ()=>{
+        localStorage.removeItem(obj.email);
+        parentElement.removeChild(childElement);
+        document.getElementById('username').value =obj.name;
+        document.getElementById('ueremail').value =obj.email;
+        document.getElementById('usercontact').value =obj.contact;
+        document.getElementById('datetime').value =obj.callhrs;
+    }
     childElement.appendChild(deleteButton);
+    childElement.appendChild(editButton);
     parentElement.appendChild(childElement);
+
+      
     let button1 = document.getElementById('btn-1');
     button1.style.width = '50px';
+    let button2 = documnet.getElementById('btn-2');
+    button2.style.width = '50px';
+   
 }
 ;
